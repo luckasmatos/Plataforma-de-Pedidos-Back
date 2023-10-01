@@ -38,18 +38,6 @@ app.post('/order', (request, response) => {
     return response.status(201).json(demand) 
 })
 
-app.put('/order/:id', middlewareCheckuserId, (request, response) => { 
-
-    const id = request.orderId
-    const {item, name} = request.body 
-    const updateDemand = {id, item, name} 
-
-    const index = request.orderIndex
-    order[index] = updateDemand 
-
-    return response.json(updateDemand) 
-})
-
 app.delete('/order/:id', middlewareCheckuserId, (request, response) => { 
 
     const index = request.orderIndex
